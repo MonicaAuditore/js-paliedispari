@@ -73,18 +73,20 @@ let sommaNumeri = numeroGenerato + utenteNumero;
 console.log("La somma dei numeri è: ", sommaNumeri);
 
 // Stabisco se la somma dei numeri è pari o dispari
-
-const pari = "pari";
-
 function pariDispari() {
-  if (sommaNumeri % 2 == 0 && pariOdispari == pari) {
-    let vincitore = "Utente hai vinto";
-    console.log(vincitore);
-  } else {
-    let vincitore = "Computer hai vinto";
-    console.log(vincitore);
-  }
+  let risultato = sommaNumeri % 2 == 0;
+  console.log("è pari?", risultato);
+
+  return risultato;
 }
 
-let risultatoFinale = pariDispari(sommaNumeri);
-console.log(risultatoFinale);
+let responso = pariDispari(sommaNumeri);
+
+// Stabisco il vincitore
+const pari = "pari";
+
+if (responso == true && pariOdispari == pari) {
+  console.log("Utente hai vinto");
+} else {
+  console.log("Computer hai vinto");
+}
