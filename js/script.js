@@ -18,8 +18,8 @@ Istruzioni:
 
 3. Con prompt, chiedere all'utente di scegliere pari o dispari;                   -- ok
 4. Con prompt, chiedere all'utente di inserire un numero tra 1 e 5;               -- ok
-5. Creare una funzione per generare un numero random da 1 a 5 per il computer;
-6. Sommare i due numeri;
+5. Creare una funzione per generare un numero random da 1 a 5 per il computer;    -- ok
+6. Sommare i due numeri;                                                          -- ok
 7. Stabilire se la somma dei numeri è pari o dispari;
 8. Dichiarare il vincitore.
  */
@@ -58,7 +58,7 @@ const pariOdispari = prompt("Scegli pari o dispari");
 console.log("Pari o dispari?", pariOdispari);
 
 // Chiedo all'utente di inserire un numero da 1 a 5
-const utenteNumero = prompt("Scegli un numero da 1 a 5");
+const utenteNumero = parseInt(prompt("Scegli un numero da 1 a 5"));
 console.log("Scelta numero utente", utenteNumero);
 
 // Creo una funzione per generare un numero random da 1 a 5
@@ -68,3 +68,23 @@ function numeroRandom(min, max) {
 
 let numeroGenerato = numeroRandom(1, 5);
 console.log("Scelta numero computer", numeroGenerato);
+
+let sommaNumeri = numeroGenerato + utenteNumero;
+console.log("La somma dei numeri è: ", sommaNumeri);
+
+// Stabisco se la somma dei numeri è pari o dispari
+
+const pari = "pari";
+
+function pariDispari() {
+  if (sommaNumeri % 2 == 0 && pariOdispari == pari) {
+    let vincitore = "Utente hai vinto";
+    console.log(vincitore);
+  } else {
+    let vincitore = "Computer hai vinto";
+    console.log(vincitore);
+  }
+}
+
+let risultatoFinale = pariDispari(sommaNumeri);
+console.log(risultatoFinale);
